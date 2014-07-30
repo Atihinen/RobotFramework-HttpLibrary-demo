@@ -1,0 +1,7 @@
+*** Settings ***
+Resource  common_resources.txt
+
+*** Variables ***
+${PROTOCOL}  http
+${PORT}  8080
+${SERVER}  ${PROTOCOL}://localhost:${PORT}
