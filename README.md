@@ -28,3 +28,13 @@ cd to [tests/acceptance](https://github.com/Atihinen/RobotFramework-HttpLibrary-
 ```shell
 pybot .
 ```
+
+##API documentation
+
+HTTP method | url | params | returns
+------------|-----|--------|--------
+GET | / | None | [{id:0, name:"...", description:"..."}]
+GET | /blog/<id> | None | {id:0, name:"...", description: "...", content:"..."} / 404
+PUT | /blog/<id>/update | None | 200 / 404
+POST | /new_blog | name (string), description (string), (content) | 200
+DELETE | /delete_blog/<id> | None | 200/404
