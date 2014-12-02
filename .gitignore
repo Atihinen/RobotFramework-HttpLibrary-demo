@@ -1,5 +1,4 @@
-.classpath
-.project
-.settings
-/target/
-*.*~
+*.pyc
+tests/*.html
+tests/*.xml
+tests/*.png
