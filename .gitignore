@@ -1,4 +1,4 @@
 *.pyc
-tests/*.html
-tests/*.xml
-tests/*.png
+tests/acceptance/*.html
+tests/acceptance/*.xml
+tests/acceptance/*.png
