@@ -1,7 +1,7 @@
 RobotFramework-HttpLibrary-demo
 ===============================
 
-Demo how to use robotframework and httplibrary to test API
+Demo how to use [robotframework](http://www.robotframework.org) and [httplibrary](https://github.com/bulkan/robotframework-requests/#readme) to test API
 
 
 # Requirements for Robot Framework & HTTPLibrary
