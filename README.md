@@ -13,8 +13,9 @@ pip install -r requirements.txt
 ```
 
 # API application
-API is written in python using bottlepy library
-To run application just cd to root folder of the gitrepostory:
+API is written in python using bottlepy library.
+
+To run application just cd to root folder of the git repository:
 ```shell
 python app.py
 ```
