@@ -11,3 +11,19 @@ Or you can just run on repository root:
 ```shell
 pip install -r requirements.txt
 ```
+
+# API application
+API is written in python using bottlepy library
+To run application just cd to root folder of the gitrepostory:
+```shell
+python app.py
+```
+
+When API is running open browser [http://localhost:8080](http://localhost:8080)
+
+#Running tests
+
+cd to [tests/acceptance](https://github.com/Atihinen/RobotFramework-HttpLibrary-demo/tree/master/tests/acceptance) and run following command:
+```shell
+pybot .
+``
