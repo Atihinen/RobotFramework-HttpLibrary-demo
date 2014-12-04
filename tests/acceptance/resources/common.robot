@@ -27,7 +27,7 @@ Return '${value}' incremental by '${inc}'
 Create new blog
   [Arguments]  ${session}  ${data}
   ${headers}=  Create Post Headers
-  ${resp}=  Post  ${session}  /new_blog  data=${data}  headers=${headers}
+  ${resp}=  Post  ${session}  /blog/new  data=${data}  headers=${headers}
   [Return]  ${resp}
 
 Create Post Headers
@@ -41,7 +41,7 @@ Generate Blog Data
 
 Verify that new blog is created
   [Arguments]  ${response}
-  Should Be Equal As Strings  ${resp.status_code}  200
+  Verify that '${response}' status code is '200'
   ${new_len}=  Get number of blogs  localhost
   Should Be Equal As Integers  ${PREVIOUS_VALUE}  ${new_len}
 
@@ -57,14 +57,14 @@ Get newest index
   ${ind}=  Evaluate  ${num}-1
   [Return]  ${ind}
 
-Verify that '${resp}' statuscode is '${error_code}'
+Verify that '${resp}' status code is '${error_code}'
   ${error_code}=  Convert To Integer  ${error_code}
   Should Be Equal As Strings  ${resp.status_code}  ${error_code}
 
 Get blog
   [Arguments]  ${session}  ${index}
   ${resp}=  Get  ${session}  /blog/${index}
-  Verify that '${resp}' statuscode is '200'
+  Verify that '${resp}' status code is '200'
   ${jsondata}=  To Json  ${resp.content}
   [Return]  ${jsondata}
 

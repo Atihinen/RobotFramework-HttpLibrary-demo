@@ -31,7 +31,7 @@ Updating blog should return updated blog
 Create blog with custom data
   [Arguments]  ${data}  ${session}
   ${resp}=  Create new blog  ${session}  ${data}
-  Verify that '${resp}' statuscode is '200'
+  Verify that '${resp}' status code is '200'
   ${index}=  Get newest index  ${session}
   ${blog}=  Get blog  ${session}  ${index}
   [Return]  ${blog}
@@ -46,7 +46,7 @@ Update blog post
   [Arguments]  ${session}  ${index}  ${data}
   ${headers}=  Create Post Headers
   ${resp}=  Put  ${session}  /blog/${index}/update  data=${data}  headers=${headers}
-  Verify that '${resp}' statuscode is '200'
+  Verify that '${resp}' status code is '200'
 
 Get object id
   [Arguments]  ${object}

@@ -18,7 +18,7 @@ Removing blog that doesn't exists should return 404
     ${blog_num}=  Get number of blogs  localhost
     ${index}=  Return '${blog_num}' incremental by '1'
     ${delete}=  Delete blog  localhost  ${index}
-    Verify that '${delete}' statuscode is '404'
+    Verify that '${delete}' status code is '404'
 
 
 *** Keywords ***
@@ -30,7 +30,7 @@ Delete newest blog
 
 Delete blog
     [Arguments]  ${session}  ${index}
-    ${delete}=  Delete  ${session}  /delete_blog/${index}
+    ${delete}=  Delete  ${session}  /blog/${index}/delete
     [Return]  ${delete}
 
 Verify that blog is deleted

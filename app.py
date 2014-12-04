@@ -29,7 +29,7 @@ def index():
 	return json_val
 
 
-@route('/new_blog', method='POST')
+@route('/blog/new', method='POST')
 def new_blog():
 	global cur_id
 	name, description, content = parse_content(request)
@@ -37,7 +37,7 @@ def new_blog():
 	cur_id+=1
 	return HTTPResponse(status=200)
 
-@route('/delete_blog/<id>', method='DELETE')
+@route('/blog/<id>/delete', method='DELETE')
 def delete_blog(id):
 	if isinstance(id, str):
 		id = int(id)

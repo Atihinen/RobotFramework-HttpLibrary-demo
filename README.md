@@ -36,5 +36,5 @@ HTTP method | url | params | returns
 GET | / | None | [{id:0, name:"...", description:"..."}, ...]
 GET | /blog/`<id>` | None | {id:0, name:"...", description: "...", content:"..."} / 404
 PUT | /blog/`<id>`/update | name (string), description (string), content (string) | 200 / 404
-POST | /new_blog | name (string), description (string), content (string) | 200
-DELETE | /delete_blog/`<id>` | None | 200 / 404
+POST | /blog/new | name (string), description (string), content (string) | 200
+DELETE | /blog/`<id>`/delete | None | 200 / 404
