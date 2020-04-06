@@ -1,17 +1,15 @@
 [![Build Status](https://travis-ci.com/Atihinen/RobotFramework-HttpLibrary-demo.svg?branch=master)](https://travis-ci.com/Atihinen/RobotFramework-HttpLibrary-demo)
 
-
-# Requirements
-
-* python3
-* pip for python3
-
 # RobotFramework-HttpLibrary-demo
 
 Demo how to use [robotframework](http://www.robotframework.org) and [httplibrary](https://github.com/bulkan/robotframework-requests/#readme) to test API
 
+## Requirements
 
-# Requirements for Robot Framework & HTTPLibrary
+* python3
+* pip for python3
+
+## Requirements for Robot Framework & HTTPLibrary
 Check [requirements](https://github.com/Atihinen/RobotFramework-HttpLibrary-demo/blob/master/requirements.txt)
 
 Or you can just run on repository root:
@@ -19,7 +17,7 @@ Or you can just run on repository root:
 pip install -r requirements.txt
 ```
 
-# API application
+## API application
 API is written in python using bottlepy library.
 
 To run application just cd to root folder of the git repository:
@@ -29,7 +27,7 @@ python app.py
 
 When API is running open browser [http://localhost:8080](http://localhost:8080)
 
-# Running tests
+## Running tests
 
 To run acceptance tests, run the following command:
 ```shell
