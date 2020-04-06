@@ -7,16 +7,16 @@ ${VALID_CONT}=  Very long firstime blog text
 *** Keywords ***
 
 Get number of blogs
-  [Arguments]  ${session}
-  ${get}=  Get  ${session}  /
-  ${cur_len}=  Get Length  ${get.json()}
-  [Return]  ${cur_len}
+  [Arguments]    ${session}
+  ${get}=    Get Request    ${session}  /
+  ${cur_len}=    Get Length    ${get.json()}
+  [Return]    ${cur_len}
 
 Get current number of blogs
-  [Arguments]  ${session}
-  ${cur_len}=  Get number of blogs  ${session}
-  ${prev_val}=  Return '${cur_len}' incremental by '1'
-  Set Suite Variable  ${PREVIOUS_VALUE}  ${prev_val}
+  [Arguments]    ${session}
+  ${cur_len}=    Get number of blogs    ${session}
+  ${prev_val}=    Return '${cur_len}' incremental by '1'
+  Set Suite Variable    ${PREVIOUS_VALUE}    ${prev_val}
 
 Return '${value}' incremental by '${inc}'
   ${num}=  Convert To Integer  ${value}
@@ -27,7 +27,7 @@ Return '${value}' incremental by '${inc}'
 Create new blog
   [Arguments]  ${session}  ${data}
   ${headers}=  Create Post Headers
-  ${resp}=  Post  ${session}  /blog/new  data=${data}  headers=${headers}
+  ${resp}=  Post Request    ${session}    /blog/new    data=${data}    headers=${headers}
   [Return]  ${resp}
 
 Create Post Headers
@@ -62,11 +62,11 @@ Verify that '${resp}' status code is '${error_code}'
   Should Be Equal As Strings  ${resp.status_code}  ${error_code}
 
 Get blog
-  [Arguments]  ${session}  ${index}
-  ${resp}=  Get  ${session}  /blog/${index}
+  [Arguments]    ${session}    ${index}
+  ${resp}=    Get Request    ${session}    /blog/${index}
   Verify that '${resp}' status code is '200'
-  ${jsondata}=  To Json  ${resp.content}
-  [Return]  ${jsondata}
+  ${jsondata}=    To Json    ${resp.content}
+  [Return]    ${jsondata}
 
 Blog '${blog}' '${key}' should be '${value}'
   ${real_value}=  Get From Dictionary  ${blog}  ${key}

@@ -2,3 +2,6 @@
 tests/acceptance/*.html
 tests/acceptance/*.xml
 tests/acceptance/*.png
+log.html
+output.xml
+report.html

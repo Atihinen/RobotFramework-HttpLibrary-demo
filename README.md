@@ -1,5 +1,12 @@
-RobotFramework-HttpLibrary-demo
-===============================
+[![Build Status](https://travis-ci.com/Atihinen/RobotFramework-HttpLibrary-demo.svg?branch=master)](https://travis-ci.com/Atihinen/RobotFramework-HttpLibrary-demo)
+
+
+# Requirements
+
+* python3
+* pip for python3
+
+# RobotFramework-HttpLibrary-demo
 
 Demo how to use [robotframework](http://www.robotframework.org) and [httplibrary](https://github.com/bulkan/robotframework-requests/#readme) to test API
 
@@ -22,14 +29,14 @@ python app.py
 
 When API is running open browser [http://localhost:8080](http://localhost:8080)
 
-#Running tests
+# Running tests
 
-cd to [tests/acceptance](https://github.com/Atihinen/RobotFramework-HttpLibrary-demo/tree/master/tests/acceptance) and run following command:
+To run acceptance tests, run the following command:
 ```shell
-pybot .
+robot tests/acceptance/
 ```
 
-##API documentation
+## API documentation
 
 HTTP method | url | params | returns
 ------------|-----|--------|--------

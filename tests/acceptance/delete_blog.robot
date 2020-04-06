@@ -1,9 +1,9 @@
 *** Settings ***
-Library  Collections         
-Library  RequestsLibrary 
-Resource  resources/common.robot
+Library    Collections         
+Library    RequestsLibrary 
+Resource    resources/common.robot
 
-*** TestCases ***
+*** Test Cases ***
 
 Removing blog should return 200
     Create Session  localhost  http://localhost:8080
@@ -23,21 +23,21 @@ Removing blog that doesn't exists should return 404
 
 *** Keywords ***
 Delete newest blog
-    [Arguments]  ${session}
-    ${index}=  Get newest index  ${session}
-    ${resp}=  Delete blog  ${session}  ${index}
-    [Return]  ${resp}  ${index}
+    [Arguments]    ${session}
+    ${index}=    Get newest index    ${session}
+    ${resp}=    Delete blog    ${session}    ${index}
+    [Return]    ${resp}    ${index}
 
 Delete blog
-    [Arguments]  ${session}  ${index}
-    ${delete}=  Delete  ${session}  /blog/${index}/delete
-    [Return]  ${delete}
+    [Arguments]    ${session}    ${index}
+    ${delete}=    Delete Request    ${session}    /blog/${index}/delete
+    [Return]    ${delete}
 
 Verify that blog is deleted
-    [Arguments]  ${session}  ${resp}  ${previous_number_of_blogs}
-    Should Be Equal As Strings  ${resp.status_code}  200
-    ${cur_len}=  Get number of blogs  localhost
-    Should Be Equal As Integers  ${cur_len}  ${previous_number_of_blogs}
+    [Arguments]    ${session}    ${resp}    ${previous_number_of_blogs}
+    Should Be Equal As Strings    ${resp.status_code}    200
+    ${cur_len}=    Get number of blogs    localhost
+    Should Be Equal As Integers    ${cur_len}    ${previous_number_of_blogs}
 
 
 
